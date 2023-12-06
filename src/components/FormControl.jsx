@@ -2,7 +2,7 @@ import { useState } from "react";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 
-function FormControl() {
+function FormControl({veri}) {
   const [data, setData] = useState({
     firstname: "",
     lastname: "",
@@ -19,6 +19,8 @@ function FormControl() {
 
   const handleFormSubmit = (e) => {
     e.preventDefault();
+    
+    console.log(firstname, lastname, image, password)
 
     setData({
         firstname:"", 
@@ -39,6 +41,8 @@ function FormControl() {
           placeholder="Enter First Name"
           onChange={handleData}
           value={firstname}
+          name="firstname"
+          id="firstname"
         />
       </Form.Group>
       <Form.Group className="mb-3" controlId="lastname">
@@ -48,6 +52,8 @@ function FormControl() {
           placeholder="Enter Last Name"
           onChange={handleData}
           value={lastname}
+          name="lastname"
+          id="lastname"
         />
       </Form.Group>
       <Form.Group className="mb-3" controlId="image">
@@ -57,6 +63,8 @@ function FormControl() {
           placeholder="Enter Img Url"
           onChange={handleData}
           value={image}
+          name="image"
+          id="image"
         />
       </Form.Group>
       <Form.Group className="mb-3" controlId="formBasicPassword">
@@ -66,6 +74,8 @@ function FormControl() {
           placeholder="Password"
           onChange={handleData}
           value={password}
+          name="password"
+          id="password"
         />
        
       </Form.Group>
